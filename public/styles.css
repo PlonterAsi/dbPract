@@ -1,0 +1,252 @@
+body {
+  /* font-family: Raleway; */
+  color: #555;
+  background: #8894ad;
+  margin: 10px 30px;
+}
+
+#homepage {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 10px 20px;
+  background: #fdfdfd;
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 2);
+}
+
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+}
+
+#menu button {
+  background-color: rgb(84, 132, 223);
+}
+
+#rest-list-false {
+  border-radius: 4px;
+  border: solid;
+  border-color: rgb(255, 0, 0);
+}
+
+#rest-list-true {
+  border-radius: 4px;
+  border: solid;
+  border-color: rgb(0, 255, 13);
+}
+
+input[type="text"] {
+  display: flex;
+  width: 300px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* input.inline {
+  display: inline-block;
+} */
+
+input[type="submit"] {
+  background: #555;
+  color: #fff;
+  border: 0;
+  padding: 10px;
+  font-size: 18px;
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#branch_item {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#branches_li {
+  border-radius: 25px;
+  border: 2px solid #21ada6;
+  height: 100px;
+  width: 770px;
+}
+
+#delete_branch_div {
+  height: 15px;
+  width: 20px;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+#delete_branch_btn {
+  background-color: maroon;
+  border-radius: 15px;
+  border: 2px solid #555;
+  margin-bottom: auto;
+}
+
+#new_rest_form {
+  display: flex;
+  flex-direction: row;
+}
+
+/* #branch-inside-right {
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  text-align: center;
+} */
+
+/* #branch-inside-left {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  text-align: center;
+} */
+
+#branch_from {
+  display: flex;
+  display: flex;
+  flex-direction: row;
+}
+
+#branches {
+  display: flex;
+  width: inherit;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#inline-branch {
+  display: flex;
+  flex-direction: row;
+}
+
+label {
+  display: flex;
+  font-weight: bold;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font-size: 48px;
+}
+
+#homepage h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 350px;
+  margin: 30px auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+#left span {
+  display: flex;
+  align-items: center;
+}
+
+#right {
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+#right span {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1px;
+  padding: 1px;
+}
+
+li.available {
+  border: solid;
+  border-radius: 2px;
+  border-color: springgreen;
+  text-align: center;
+}
+
+li.notAvailable {
+  border: solid;
+  border-radius: 2px;
+  border-color: tomato;
+  text-align: center;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background: #eee;
+  list-style-type: none;
+  font-size: 18px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+span {
+  display: block;
+  margin: 0 20px;
+}
+
+span.dist {
+  color: green;
+  float: right;
+}
+
+span.true {
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  background: green;
+}
+
+span.false {
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  background: #ff5252;
+  text-align: center;
+}
+
+button {
+  background: green;
+  border: 0;
+  padding: 5px 10px;
+  margin: 2px 4px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.false {
+  display: none;
+}
