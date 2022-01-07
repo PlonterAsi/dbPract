@@ -22,7 +22,7 @@ const LocationSchema = Schema({
     type: String,
     required: [true, "missing branch street!"],
   },
-  geometry: {
+  location: {
     type: GeoSchema,
     required: [false, "missing branch geo location information!"],
   },
@@ -58,7 +58,7 @@ const WeeklyOpenSchema = {
 };
 
 const BranchSchema = new Schema({
-  location: {
+  location_info: {
     type: LocationSchema,
     required: [true, "missing restaurant location information!"],
   },
@@ -68,6 +68,7 @@ const BranchSchema = new Schema({
   },
   openHours: {
     type: WeeklyOpenSchema,
+    default: WeeklyOpenSchema,
   },
 });
 

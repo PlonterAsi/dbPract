@@ -25,9 +25,10 @@ window.Restaurants = React.createClass({
               id="list-entry"
               className="phone"
             >{`phone: ${restaurant.phone}`}</span>
-            <span id="list-entry" className="city">{`nummber of brances: ${
-              restaurant.branches.length + 1
-            }`}</span>
+            <span
+              id="list-entry"
+              className="city"
+            >{`number of brances: ${restaurant.branches.length}`}</span>
             <span
               id="list-entry"
               className="branch_cities"
@@ -56,7 +57,7 @@ window.Restaurants = React.createClass({
   getAllBranchesCities: (restaurant) => {
     const cities = [];
     restaurant.branches.forEach((branch) => {
-      cities.push(branch.location.city);
+      cities.push(branch.location_info.city);
     });
     return cities.join(", ");
   },

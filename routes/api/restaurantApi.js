@@ -2,6 +2,17 @@ const express = require("express");
 const router = express.Router();
 const Restaurant = require("../../models/restaurant");
 
+router.get("/restaurants_all", (req, res, next) => {
+  try {
+    Restaurant.find().exec({ name: "pizza" }, (err, post) => {
+      console.log(JSON.stringify(post, null, 2));
+      res.send(JSON.stringify(post, null, 2));
+    });
+  } catch (err) {
+    next();
+  }
+});
+
 router.get("/restaurants", (req, res, next) => {
   const limit = req.query.limit ? Number(req.query.limit) : 1;
   console.log(`limit: ${limit}`);

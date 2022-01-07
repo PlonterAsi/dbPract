@@ -67,7 +67,7 @@ window.NewRestaurant = React.createClass({
 
     listElements.forEach((value) => {
       branchList.push({
-        location: {
+        location_info: {
           city: value.children.branch_from.querySelectorAll(
             ".new_rest_branch_city"
           )[0].value,
@@ -79,9 +79,9 @@ window.NewRestaurant = React.createClass({
               ".new_rest_branch_street_number"
             )[0].value,
           ].join(" "),
-          getometry: {
+          location: {
             type: "Point",
-            coordinates: [generateRandomLatLng(), generateRandomLatLng()],
+            coordinates: generateRandomLatLng(),
           },
         },
         phone: value.children.branch_from.querySelectorAll(
@@ -96,28 +96,31 @@ window.NewRestaurant = React.createClass({
     const body = {
       name: this.refs.new_rest_name.value,
       phone: this.refs.new_rest_phone.value,
-      branches: this.handleBranches(),
-      available: true,
+      branches: await this.handleBranches(),
+      available: Math.random() < 0.5,
     };
-
+    console.log(JSON.stringify(body, null, 2));
     fetch(`/api/restaurants`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    }).then(() => {
-      document.querySelector(".list").click();
-      document.querySelector("#find_restaurants").click();
-    });
+    })
+      .then((data) => {
+        document.querySelector(".list").click();
+        document.querySelector("#find_restaurants").click();
+        return data.json();
+      })
+      .then((json) => {
+        console.log(json);
+      });
   },
 });
 
 function generateRandomLatLng() {
-  var num = Math.random() * 180;
-  var posorneg = Math.floor(Math.random());
-  if (posorneg == 0) {
-    num = num * -1;
-  }
-  return num.toFixed(4);
+  return [
+    Math.floor(Math.random() * 10) + 80,
+    Math.floor(Math.random() * 10) + 80,
+  ];
 }
